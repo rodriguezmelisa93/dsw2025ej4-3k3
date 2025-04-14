@@ -8,6 +8,8 @@ import java.util.InvalidPropertiesFormatException;
 import java.util.List;
 
 public class Controlador {
+    
+    
     public static TipoAlimentacion[] getTiposAlimentacion(){
         return  TipoAlimentacion.values();
     }
@@ -17,6 +19,22 @@ public class Controlador {
     public static ArrayList<Sector> getSectores(){
         return Persistencia.getSectores();
     }
+   ////---- 
+  
+    
+    public static void agregarNuevoAnimal(int edad,double peso,String especie,int valorFijo) throws InvalidPropertiesFormatException{
+        if(Especie.asignarEspecie(especie)== 0  || Especie.asignarEspecie(especie)== 1){
+    
+         Persistencia.agregarCarniboro(edad, peso, especie);
+     
+       }else{
+         Persistencia.agregarHerbivoro(edad, edad, especie, valorFijo);
+        }
+    
+        
+    }
+    
+    
     
     public static ArrayList<AnimalViewModel> getAnimales(){
         ArrayList<AnimalViewModel> animales = new ArrayList<>();
@@ -25,6 +43,9 @@ public class Controlador {
         }
         return animales;
     }
+    
+ 
+    
     
     public static ComidaViewModel  calcularComida(){
         double totalCarnivoros = Persistencia.getTotalComida(TipoAlimentacion.CARNIVORO);
