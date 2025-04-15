@@ -52,6 +52,28 @@ public class Sector {
     }
     public TipoAlimentacion getTipoAlimentacion() {return tipoAlimentacion;}
 
+      public static int asignarSector(String especie){
+    int indiceSector=0;
+        switch(especie){
+            case "León":
+                 indiceSector=1;
+                break;
+            case "Tigre":
+                indiceSector=0;
+                break;
+            case "Elefante":
+                indiceSector=2;
+                break;
+            case "Jirafa":
+                indiceSector=3;
+                break;
+         
+        
+        }
+     return indiceSector;   
+    }
+    
+    
     @Override
     public String toString(){
         return String.format("Sector N°: %s [%s]", numero, tipoAlimentacion);
