@@ -4,6 +4,7 @@ package views;
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 import views.ListarAnimalesView ;
+import views.AltaAnimal;
 /**
  *
  * @author Melisa
@@ -79,7 +80,9 @@ public class MenuView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        
+AltaAnimal listarAnimal = new AltaAnimal (null,true);
+listarAnimal.setVisible(true);
+this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
